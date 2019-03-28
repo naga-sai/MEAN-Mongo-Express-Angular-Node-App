@@ -1,0 +1,52 @@
+<app-panel-box *ngFor="let post of allPosts">
+    <span panel-title>{{ post.postTitle }}</span>
+    <div panel-body>
+      <div>
+        <p>{{ post.postDescription }}</p>
+        <p>Created By: {{ post.createdBy }}</p>
+      </div>
+      <button
+        class="btn btn-primary likes"
+        id="{{ post._id }}"
+        (click)="likes($event)"
+        title="{{ post.likes }}"
+      >
+        <span class="glyphicon glyphicon-heart"> {{ post.likes.length }}</span>
+      </button>
+      <button class="btn btn-danger" id="{{ post._id }}" (click)="delPost($event)">
+        Delete Post
+      </button>
+      <a [routerLink]="['/list-posts', post._id]" class="btn btn-warning">View Post</a>
+      <button
+        class="btn btn-primary cmtBtn"
+        id="{{ post._id }}"
+        (click)="showComments($event)"
+      >
+        Comments
+      </button>
+      <div [hidden]="true" class="cmtDiv" id="{{ post._id }}">
+        <div class="addCmtDiv" id="{{ post._id }}">
+          <form [formGroup]="addCmtForm" (ngSubmit)="addCmt( post._id,$event)" >
+              <div class="form-group">
+          <input
+            type="text"
+            placeholder="Add Comment"
+            class="cmtText form-control"
+            id="{{ post._id }}"
+            formControlName="text"
+          />
+        </div>
+          <button
+            class="btn btn-primary addCmt"
+            id="{{ post._id }}"
+          >
+            Add
+          </button>
+          </form>
+        </div>
+        <div *ngFor="let comment of post.comments">
+          {{ comment.author }} --{{ comment.text }}
+        </div>
+    </div>
+    </div>
+  </app-panel-box>

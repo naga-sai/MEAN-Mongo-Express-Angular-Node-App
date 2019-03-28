@@ -1,0 +1,53 @@
+<app-panel-box *ngIf="post">
+    <span panel-title>{{ post.postTitle }}</span>
+    <div panel-body>
+      <div>
+        <p>{{ post.postDescription }}</p>
+        <p>Created By: {{ post.createdBy }}</p>
+      </div>
+      <button
+        class="btn btn-primary likes"
+        id="{{ post._id }}"
+        (click)="likes($event)"
+        title="{{ post.likes }}"
+      >
+        <span class="glyphicon glyphicon-heart"> {{ post.likes.length }}</span>
+      </button>
+      <button class="btn btn-danger" id="{{ post._id }}" (click)="delPost($event)">
+        Delete Post
+      </button>
+      <button
+        class="btn btn-primary cmtBtn"
+        id="{{ post._id }}"
+        (click)="showComments($event)"
+      >
+       {{!shwCmmnts? "Show":"Hide"}} Comments
+      </button>
+      <button
+      class="btn btn-warning"
+      (click)="back()"
+    >
+     Back
+    </button>
+      <div [hidden]="true" class="cmtDiv" id="{{ post._id }}">
+        <div class="addCmtDiv" id="{{ post._id }}">
+          <input
+            type="text"
+            placeholder="Add Comment"
+            class="cmtText"
+            id="{{ post._id }}"
+          />
+          <button
+            class="btn btn-primary addCmt"
+            id="{{ post._id }}"
+            (click)="addCmt($event)"
+          >
+            Add
+          </button>
+        </div>
+        <div *ngFor="let comment of post.comments">
+          {{ comment.author }} --{{ comment.text }}
+        </div>
+    </div>
+    </div>
+  </app-panel-box>

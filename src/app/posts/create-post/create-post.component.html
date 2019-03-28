@@ -1,0 +1,70 @@
+<app-panel-box>
+    <span panel-title>Create Post</span>
+    <div panel-body>
+        <form [formGroup]="createPostForm" (ngSubmit)="createPost()">
+            <div class="form-group">
+              <label>Post Title</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Post Title"
+                formControlName="postTitle"
+              />
+              <div
+                *ngIf="
+                  !createPostForm.get('postTitle').valid &&
+                  createPostForm.get('postTitle').touched
+                "
+              >
+                <div
+                  class="alert alert-danger"
+                  *ngIf="createPostForm.get('postTitle').errors.required"
+                >
+                  Please enter title
+                </div>
+                <div
+                  class="alert alert-danger"
+                  *ngIf="createPostForm.get('postTitle').errors.minLength"
+                >
+                  Atleast 3 characters
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Post Description</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Post Description"
+                formControlName="postDescription"
+              />
+              <div
+                *ngIf="
+                  !createPostForm.get('postDescription').valid &&
+                  createPostForm.get('postDescription').touched
+                "
+              >
+                <div
+                  class="alert alert-danger"
+                  *ngIf="createPostForm.get('postDescription').errors.required"
+                >
+                  Please enter Description
+                </div>
+                <div
+                  class="alert alert-danger"
+                  *ngIf="createPostForm.get('postDescription').errors.minLength"
+                >
+                  Atleast 3 characters
+                </div>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-default"
+              [disabled]="!createPostForm.valid"
+            >
+              Submit
+            </button>
+          </form>
+    </div>
+</app-panel-box>
