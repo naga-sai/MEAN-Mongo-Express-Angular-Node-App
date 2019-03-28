@@ -1,3 +1,17 @@
+## Instructions to execute the Project
+● Download the zip file or Clone the repository using the following command: <br>
+  git clone https://github.com/naga-sai/MEAN-Mongo-Express-Angular-Node-App.git <br>
+● Go to the directory: <br>
+  cd MEAN-Mongo-Express-Angular-Node-App/ <br>
+● Download the dependencies using the following command: <br>
+  npm install <br>
+● Use the following command to start or run the Angular application: <br>
+  ng serve <br>
+● Use another terminal to run the server using the following command: <br>
+  node server.js <br>
+
+
+
 # MEANAssmt
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
