@@ -1,3 +1,13 @@
+● This is a social networking app where users can create accounts, login and share their posts. <br>
+● Used Angular features like <b>Components, Services, Dependency Injection, Pipes, Component Life cycle hooks, HOC(Higher Order Components)</b> and <b>Routing</b>. <br>
+●	Used <b>Angular HttpInterceptors, HttpHeaders</b> to add <b>JWT</b> tokens in the Header of every request from the client to server to implement server side authentication. <br>
+● Restricted routes using <b>Router guards</b>. <br>
+● Implemented <b>Injection Token</b> to use JQuery as a service. <br>
+● Used <b>Mongodb</b> as the database, <b>Node</b> and <b>express</b> as the backend. <br>
+● Connected the database to the backend using <b>Mongoose ORM(Object Relational Mapping)</b>.<br> 
+● This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0. <br>
+
+
 ## Instructions to execute the Project
 ● Download the zip file or Clone the repository using the following command: <br>
   git clone https://github.com/naga-sai/MEAN-Mongo-Express-Angular-Node-App.git <br>
@@ -14,7 +24,7 @@
 
 # MEANAssmt
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
+
 
 ## Development server
 
